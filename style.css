@@ -7,13 +7,13 @@
 
 header{
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+  top: 0; /*上はじから*/
+  left: 0; /*左端から*/
+  width: 100%; /*サイズ*/
   min-width: 600px;
-  padding: 20px;
-  background-color:transparent;
-  color: #ff8f34;
+  padding: 20px; /*枠のサイズ*/
+  background-color:transparent; /*背景の色：透明*/
+  color: #ff8f34; /*フォントの色*/
   display: flex;
   flex-direction: row;
 }
@@ -52,7 +52,7 @@ margin-top: 160px;
 
 #mainVisual{
   text-align: center;
-  margin-top: 10rem;
+  margin-top: 2rem;
   margin-bottom: 3rem;
 }
 
@@ -60,14 +60,14 @@ margin-top: 160px;
   width:30%;
 }
 
-#home img{
-  width:100%;
-}
-
 #home2{
   text-align: center;
-  margin-top: 2rem;
+  /*margin-top: 1rem;*/
   margin-bottom: 3rem;
+}
+
+#home img{
+  width: 100%;
 }
 
 #home2 img{
@@ -86,15 +86,44 @@ section h2{
 #info{
   text-align: center;
   background-color: #fdf3e0;
-  height: 700px;
+  height: 1000px;
 }
 
 #info img{
   width: 300px;
+  margin-bottom: 1rem;
+}
+
+.balloon {
+  margin: auto; /*吹き出しを中央に位置*/
+  margin-top: 2rem; /*上の余白*/
+  display: flex;
+  justify-content: center;
+  position: relative;
+  max-width: 300px;
+  margin-bottom: 15px; /*下の余白*/
+  padding: .8em 1.2em;
+  border-radius: 20px; /*角を丸くする*/
+  background-color: #f7dafb; /*吹き出しの背景色*/
+  color: #3d3d3d; /*吹き出しのテキストカラー*/
+}
+
+.balloon::before {
+  position: absolute;
+  bottom: -15px;
+  width: 30px;
+  height: 15px;
+  background-color: #f7dafb;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  content: '';
 }
 
 #about{
-  height: 700px;
+  height: 750px;
+}
+
+#about p{
+  text-align: center;
 }
 
 #cards{
@@ -134,6 +163,30 @@ section h2{
   background-color: #fdf3e0;
   height: 1100px;
   text-align: center;
+}
+
+
+button {
+  /* ブラウザ特有のスタイルを無効に */
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+
+  /* 整える */
+  margin: 1em 0; /* 前後の隙間 */
+  padding: 0.6em 1em; /* 塗りの余白 */
+  font-size: 1em; /* フォントサイズ */
+  background-color: #1aa1ff; /* 背景色 */
+  color: #FFF; /* テキストカラー */
+  cursor: pointer; /* カーソルを指マークに */
+  border-radius: 3px; /* 角の丸み */
+  border: 0; /* 枠線を消す */
+  transition: 0.3s; /* ホバーの変化を滑らかに */
+}
+
+/* ホバー時（カーソルをのせた時）の見た目 */
+button:hover {
+  background-color: #064fda; /* 背景色 */
 }
 
 .container{
